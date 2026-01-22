@@ -107,7 +107,7 @@ function ChatLayout() {
   return (
     <div className="h-screen w-screen flex bg-gray-100">
 
-      {/* SIDEBAR */}
+    
       <aside className="w-64 bg-white border-r flex flex-col">
 
         <div className="p-4">
@@ -216,7 +216,6 @@ function ChatLayout() {
         </div>
       </aside>
 
-      {/* MAIN CHAT */}
       <main className="flex-1 flex flex-col">
         <header className="px-6 py-4 border-b bg-white">
           <div className="font-semibold">Weather Agent</div>

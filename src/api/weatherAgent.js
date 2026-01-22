@@ -1,7 +1,7 @@
 const API_URL =
   "https://brief-thousands-sunset-9fcb1c78-485f-4967-ac04-2759a8fa1462.mastra.cloud/api/agents/weatherAgent/stream";
 
-// 🔴 IMPORTANT: replace with your actual college roll number
+
 const THREAD_ID = "222047";
 
 export async function streamWeatherAgent(message, onText) {
@@ -35,7 +35,7 @@ export async function streamWeatherAgent(message, onText) {
       })
     });
   } catch (networkError) {
-    // 🌟 Graceful fallback (important for evaluation)
+
     await streamFallback(onText);
     return;
   }
@@ -56,7 +56,6 @@ export async function streamWeatherAgent(message, onText) {
 
       buffer += decoder.decode(value, { stream: true });
 
-      // Mastra streams newline-separated JSON
       const chunks = buffer.split("\n");
       buffer = chunks.pop();
 
@@ -76,7 +75,6 @@ export async function streamWeatherAgent(message, onText) {
             onText(text);
           }
         } catch {
-          // Ignore malformed chunks
         }
       }
     }
@@ -85,7 +83,6 @@ export async function streamWeatherAgent(message, onText) {
   }
 }
 
-// ✅ Fallback streaming response (UX + safety)
 async function streamFallback(onText) {
   const fallbackMessage =
     "⚠️ The weather service is temporarily unavailable. Please try again later.";

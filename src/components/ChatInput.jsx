@@ -48,7 +48,7 @@ function ChatInput({ onSend, disabled }) {
 
   return (
     <div className="p-3 bg-white border-t flex items-center gap-3">
-      {/* Input */}
+    
       <input
         type="text"
         placeholder={isListening ? "Listening…" : "Type your message…"}
@@ -59,7 +59,7 @@ function ChatInput({ onSend, disabled }) {
         disabled={disabled}
       />
 
-      {/* Mic */}
+    
       <button
         onClick={startListening}
         disabled={isListening || disabled}
@@ -71,7 +71,7 @@ function ChatInput({ onSend, disabled }) {
         🎤
       </button>
 
-      {/* Send */}
+    
       <button
         onClick={sendMessage}
         disabled={disabled}
